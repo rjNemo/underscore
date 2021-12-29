@@ -13,5 +13,4 @@ func TestSome(t *testing.T) {
 	isEven := func(n int) bool { return n%2 == 0 }
 
 	assert.True(t, u.Some(nums, isEven))
-
 }
