@@ -1,7 +1,8 @@
 package underscore
 
-func Each[T any](values []T, predicate func(T)) {
+// Each iterates over a slice of elements, yielding each in turn to an action function.
+func Each[T any](values []T, action func(T)) {
 	for _, v := range values {
-		predicate(v)
+		action(v)
 	}
 }

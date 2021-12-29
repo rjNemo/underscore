@@ -7,5 +7,4 @@ RUN go mod download
 
 COPY *.go ./
 
-#RUN go test -json ./... -count=1 -cover | gotestfmt
-RUN go test ./...
+RUN go test ./... -cover
