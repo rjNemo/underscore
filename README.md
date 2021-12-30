@@ -20,3 +20,4 @@ It is mostly a port from the `underscore.js` library based on generics brought b
 - `find`
 - `contains` (only numerics values at the moment)
 - `max`
+- `min`
