@@ -112,7 +112,7 @@ the [tags on this repository](https://github.com/rjNemo/underscore/tags).
 
 - **Ruidy** - _Initial work_ - [Ruidy](https://github.com/rjNemo)
 
-See also the list of [contributors](https://github.com/rjNemo/project/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/rjNemo/underscore/contributors) who participated in this project.
 
 ## License
 
