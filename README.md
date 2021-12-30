@@ -19,3 +19,4 @@ It is mostly a port from the `underscore.js` library based on generics brought b
 - `every`
 - `find`
 - `contains` (only numerics values at the moment)
+- `max`
