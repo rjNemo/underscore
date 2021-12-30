@@ -3,10 +3,50 @@
 ![License](https://img.shields.io/github/license/rjNemo/underscore?style=for-the-badge)
 ![Go version](https://img.shields.io/github/go-mod/go-version/rjNemo/underscore?style=for-the-badge)
 
-`underscore` is a `Go` library that provides useful functional programming helpers without extending any built-in
-objects.
+![underscore](https://socialify.git.ci/rjNemo/underscore/image?description=1&descriptionEditable=A%20library%20providing%20useful%20functional%20programming%20helpers%20for%20Go%201.18&font=Raleway&language=1&logo=https%3A%2F%2Fgithub.com%2FrjNemo%2Funderscore%2Fblob%2Fmain%2Fdocs%2Funderscore.png%3Fraw%3Dtrue&name=1&pattern=Floating%20Cogs&theme=Light)
+
+`underscore` is a `Go` library providing useful functional programming helpers without extending any built-in objects.
 
 It is mostly a port from the `underscore.js` library based on generics brought by `go1.18`.
+
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing
+purposes.
+
+### Prerequisites
+
+You need at least `go1.18` for development. The project is shipped with a [Dockerfile](Dockerfile) based on `go1.18`. If
+you prefer local development, at the moment the easiest way to do it:
+
+```shell script
+go install golang.org/dl/go1.18beta1@latest
+go1.18beta1 download
+```
+
+### Installing
+
+First clone the repository
+
+```shell
+git clone https://github.com/rjNemo/underscore.git
+```
+
+Install dependencies
+
+```shell
+go mod download
+```
+
+And that's it.
+
+## Tests
+
+Building the docker image will run the tests automatically. Otherwise, you can simply run:
+
+```shell
+go test ./...
+```
 
 ## Functions
 
@@ -25,3 +65,32 @@ It is mostly a port from the `underscore.js` library based on generics brought b
 - `max`
 - `min`
 - `partition`
+
+## Built With
+
+- [Go](https://go.dev/) - Build fast, reliable, and efficient software at scale
+
+## Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull
+requests to us.
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see
+the [tags on this repository](https://github.com/rjNemo/underscore/tags).
+
+## Authors
+
+- **Ruidy** - _Initial work_ - [Ruidy](https://github.com/rjNemo)
+
+See also the list of [contributors](https://github.com/rjNemo/project/contributors) who participated in this project.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+This project is largely inspired by [Underscore.js](https://underscorejs.org/#) library. Check out the original project
+if you don't already know it.
