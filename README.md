@@ -9,6 +9,34 @@
 
 It is mostly a port from the `underscore.js` library based on generics brought by `go1.18`.
 
+## Usage
+
+Please check out the [examples](examples) to see how to use the library.
+
+```go
+package main
+
+import (
+	"fmt"
+	u "github.com/rjNemo/underscore"
+)
+
+func main() {
+	numbers := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+	// filter even numbers from the slice
+	isEven := func(n int) bool { return n%2 == 0 }
+	evens := u.Filter(numbers, isEven)
+	// square every number in the slice
+	toSquare := func(n int) int { return n * n }
+	squares := u.Map(evens, toSquare)
+	// reduce to the sum 
+	sum := func(n, acc int) int { return n + acc }
+	res := u.Reduce(squares, sum, 0)
+
+	fmt.Println(res) // 110
+}
+```
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing
