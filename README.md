@@ -33,7 +33,7 @@ func main() {
 	sum := func(n, acc int) int { return n + acc }
 	res := u.Reduce(squares, sum, 0)
 
-	fmt.Println(res) // 110
+	fmt.Println(res) // 120
 }
 ```
 
