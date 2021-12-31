@@ -82,17 +82,24 @@ go test ./...
 
 ### Collections
 
-- `map`
-- `filter`
-- `reduce`
-- `each`
-- `some`
-- `every`
-- `find`
-- `contains` (only numerics values at the moment)
-- `max`
-- `min`
-- `partition`
+- `Contains` (only numerics values at the moment)
+- `Each`
+- `Every`
+- `Filter`
+- `Find`
+- `Map`
+- `Max`
+- `Min`
+- `Partition`
+- `Reduce`
+- `Some`
+
+### Chaining
+
+Calling `NewChain` will cause all future method calls to return wrapped objects. When you've finished the computation,
+call `Value` to retrieve the final value.
+
+Methods not returning a collection such as `Reduce`, `Every`, `Some`, will break the chain and return `Value` instantly.
 
 ## Built With
 

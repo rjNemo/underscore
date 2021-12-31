@@ -11,7 +11,7 @@ func main() {
 	// filter even numbers from the slice
 	isEven := func(n int) bool { return n%2 == 0 }
 	evens := u.Filter(numbers, isEven)
-	// square every numbers numbers in the slice
+	// square every number in the slice
 	toSquare := func(n int) int { return n * n }
 	squares := u.Map(evens, toSquare)
 	// reduce to the sum
