@@ -1,0 +1,12 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'Underscore'
+theme = "compose" # edit this if you'ld rather use a fork of this repo
+enableRobotsTXT = true
+[outputs]
+home = ["HTML", "RSS","JSON"]
+[params]
+logo.lightMode = "logo.png"
+logo.darkMode = "logo.png"
+author.name = "Ruidy"
+author.url = "https://github.com/rjNemo"
