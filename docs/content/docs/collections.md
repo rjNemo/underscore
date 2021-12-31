@@ -3,6 +3,25 @@ title: "Collections"
 date: 2021-12-30T13:24:39-04:00
 ---
 
+## Contains
+
+`Contains` returns true if the value is present in the slice.
+
+```go
+package main
+
+import (
+	"fmt"
+	u "github.com/rjNemo/underscore"
+)
+
+func main() {
+	nums := []int{1, 3, 5, 7, 9}
+
+	fmt.Println(u.Contains(nums, 5)) // true 
+}
+```
+
 ## Each
 
 `Each` iterates over a slice of elements, yielding each in turn to an action function.
