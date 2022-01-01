@@ -102,7 +102,7 @@ go test ./...
 Calling `NewChain` will cause all future method calls to return wrapped objects. When you've finished the computation,
 call `Value` to retrieve the final value.
 
-Methods not returning a collection such as `Reduce`, `Every`, `Some`, will break the chain and return `Value` instantly.
+Methods not returning a slice such as `Reduce`, `Every`, `Some`, will break the chain and return `Value` instantly.
 
 ## Built With
 

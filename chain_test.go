@@ -8,26 +8,103 @@ import (
 	u "github.com/rjNemo/underscore"
 )
 
-func TestChain(t *testing.T) {
-	nums := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
-	isEven := func(n int) bool { return n%2 == 0 }
-	toSquare := func(n int) int { return n * n }
-	sum := func(n, acc int) int { return n + acc }
-
+func TestChainFilter(t *testing.T) {
 	want := []int{2, 4, 6, 8}
-	assert.Equal(t, want, u.NewChain(nums).
-		Filter(isEven).
-		Value)
+	assert.Equal(t,
+		want,
+		u.NewChain(nums).Filter(isEven).Value,
+	)
+}
 
-	want = []int{4, 16, 36, 64}
+func TestChainFilterMap(t *testing.T) {
+	want := []int{4, 16, 36, 64}
+	assert.Equal(t,
+		want,
+		u.NewChain(nums).
+			Filter(isEven).
+			Map(toSquare).
+			Value)
+}
+
+func TestChainFilterMapReduce(t *testing.T) {
+	want := 120
+	assert.Equal(t,
+		want,
+		u.NewChain(nums).
+			Filter(isEven).
+			Map(toSquare).
+			Reduce(sum, 0))
+}
+
+func TestChainFilterMapContains(t *testing.T) {
+	assert.True(t, u.NewChain(nums).
+		Filter(isEven).
+		Map(toSquare).
+		Contains(16))
+}
+
+func TestChainFilterMapEach(t *testing.T) {
+	want := []int{5, 17, 37, 65}
+	res := make([]int, 0)
+	u.NewChain(nums).
+		Filter(isEven).
+		Map(toSquare).
+		Each(func(n int) { res = append(res, n+1) })
+	assert.Equal(t, want, res)
+}
+
+func TestChainFilterMapEvery(t *testing.T) {
+	assert.True(t, u.NewChain(nums).
+		Filter(isEven).
+		Map(toSquare).
+		Every(func(n int) bool { return n%4 == 0 }))
+}
+
+func TestChainFilterMapFind(t *testing.T) {
+	n, err := u.NewChain(nums).
+		Filter(isEven).
+		Map(toSquare).
+		Find(func(n int) bool { return n%4 == 0 })
+	assert.Equal(t, 4, n)
+	assert.NoError(t, err)
+}
+
+func TestChainFilterMapMax(t *testing.T) {
+	want := 64
 	assert.Equal(t, want, u.NewChain(nums).
 		Filter(isEven).
 		Map(toSquare).
-		Value)
+		Max())
+}
 
-	w := 120
+func TestChainFilterMapMin(t *testing.T) {
+	w := 4
 	assert.Equal(t, w, u.NewChain(nums).
 		Filter(isEven).
 		Map(toSquare).
-		Reduce(sum, 0))
+		Min())
 }
+
+func TestChainFilterMapPartition(t *testing.T) {
+	wantLeft := []int{4, 16}
+	wantRight := []int{36, 64}
+	left, right := u.NewChain(nums).
+		Filter(isEven).
+		Map(toSquare).
+		Partition(func(n int) bool { return n < 20 })
+
+	assert.Equal(t, wantLeft, left)
+	assert.Equal(t, wantRight, right)
+}
+
+func TestChainFilterMapSome(t *testing.T) {
+	assert.True(t, u.NewChain(nums).
+		Filter(isEven).
+		Map(toSquare).
+		Some(func(n int) bool { return n%64 == 0 }))
+}
+
+var nums = []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+var isEven = func(n int) bool { return n%2 == 0 }
+var toSquare = func(n int) int { return n * n }
+var sum = func(n, acc int) int { return n + acc }
