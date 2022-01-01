@@ -25,6 +25,13 @@ func (c Chain[T]) Each(action func(T)) {
 	Each(c.Value, action)
 }
 
+// Every returns true if all the values in the slice pass the predicate truth test.
+// Short-circuits and stops traversing the slice if a false element is found.
+// Breaks the Chain.
+func (c Chain[T]) Every(predicate func(T) bool) bool {
+	return Every(c.Value, predicate)
+}
+
 // Filter looks through each value in the slice, returning a slice of all the values that pass a truth test (predicate).
 func (c Chain[T]) Filter(predicate func(n T) bool) Chain[T] {
 	return Chain[T]{Value: Filter(c.Value, predicate)}

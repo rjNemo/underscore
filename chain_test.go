@@ -44,6 +44,11 @@ func TestChain(t *testing.T) {
 		Each(func(n int) {
 			res = append(res, n+1)
 		})
-
 	assert.Equal(t, want, res)
+
+	assert.True(t, u.NewChain(nums).
+		Filter(isEven).
+		Map(toSquare).
+		Every(func(n int) bool { return n%4 == 0 }))
+
 }
