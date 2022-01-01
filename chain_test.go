@@ -51,4 +51,10 @@ func TestChain(t *testing.T) {
 		Map(toSquare).
 		Every(func(n int) bool { return n%4 == 0 }))
 
+	f, err := u.NewChain(nums).
+		Filter(isEven).
+		Map(toSquare).
+		Find(func(n int) bool { return n%4 == 0 })
+	assert.Equal(t, 4, f)
+	assert.NoError(t, err)
 }

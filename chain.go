@@ -37,6 +37,14 @@ func (c Chain[T]) Filter(predicate func(n T) bool) Chain[T] {
 	return Chain[T]{Value: Filter(c.Value, predicate)}
 }
 
+// Find looks through each value in the slice, returning the first one that passes a truth test (predicate),
+// or the default value for the type and an error if no value passes the test.
+// The function returns as soon as it finds an acceptable element, and doesn't traverse the entire slice.
+// Breaks the Chain.
+func (c Chain[T]) Find(predicate func(n T) bool) (T, error) {
+	return Find(c.Value, predicate)
+}
+
 // Map produces a new slice of values by mapping each value in the slice through
 // a transform function.
 //
