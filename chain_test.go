@@ -79,4 +79,9 @@ func TestChain(t *testing.T) {
 
 	assert.Equal(t, wFirstHalf, firstHalf)
 	assert.Equal(t, wSecondHalf, secondHalf)
+
+	assert.True(t, u.NewChain(nums).
+		Filter(isEven).
+		Map(toSquare).
+		Some(func(n int) bool { return n%64 == 0 }))
 }

@@ -71,6 +71,7 @@ func (c Chain[T]) Min() T {
 
 // Partition splits the slice into two slices: one whose elements all satisfy predicate
 // and one whose elements all do not satisfy predicate.
+// Breaks the Chain.
 func (c Chain[T]) Partition(predicate func(T) bool) ([]T, []T) {
 	return Partition(c.Value, predicate)
 }
@@ -79,4 +80,11 @@ func (c Chain[T]) Partition(predicate func(T) bool) ([]T, []T) {
 // acc is the initial state, and each successive step of it should be returned by the reduction function.
 func (c Chain[T]) Reduce(reducer func(n, acc T) T, acc T) T {
 	return Reduce(c.Value, reducer, acc)
+}
+
+// Some returns true if any of the values in the slice pass the predicate truth test.
+// Short-circuits and stops traversing the slice if a true element is found.
+// Breaks the Chain.
+func (c Chain[T]) Some(predicate func(T) bool) bool {
+	return Some(c.Value, predicate)
 }
