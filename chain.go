@@ -1,6 +1,8 @@
 package underscore
 
-type Chain[T any] struct {
+import "constraints"
+
+type Chain[T constraints.Ordered] struct {
 	Value []T
 }
 
@@ -8,7 +10,7 @@ type Chain[T any] struct {
 // call Value to retrieve the final value.
 //
 // Methods not returning a slice such as Reduce, Every, Some, will break the chain and return Value instantly.
-func NewChain[T any](value []T) Chain[T] {
+func NewChain[T constraints.Ordered](value []T) Chain[T] {
 	return Chain[T]{Value: value}
 }
 
@@ -29,4 +31,9 @@ func (c Chain[T]) Map(transform func(n T) T) Chain[T] {
 // acc is the initial state, and each successive step of it should be returned by the reduction function.
 func (c Chain[T]) Reduce(reducer func(n, acc T) T, acc T) T {
 	return Reduce(c.Value, reducer, acc)
+}
+
+// Contains returns true if the value is present in the slice and breaks the Chain.
+func (c Chain[T]) Contains(value T) bool {
+	return Contains(c.Value, value)
 }

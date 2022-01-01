@@ -30,4 +30,9 @@ func TestChain(t *testing.T) {
 		Filter(isEven).
 		Map(toSquare).
 		Reduce(sum, 0))
+
+	assert.True(t, u.NewChain(nums).
+		Filter(isEven).
+		Map(toSquare).
+		Contains(16))
 }
