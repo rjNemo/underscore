@@ -35,4 +35,15 @@ func TestChain(t *testing.T) {
 		Filter(isEven).
 		Map(toSquare).
 		Contains(16))
+
+	want = []int{5, 17, 37, 65}
+	res := make([]int, 0)
+	u.NewChain(nums).
+		Filter(isEven).
+		Map(toSquare).
+		Each(func(n int) {
+			res = append(res, n+1)
+		})
+
+	assert.Equal(t, want, res)
 }
