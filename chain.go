@@ -53,6 +53,28 @@ func (c Chain[T]) Map(transform func(n T) T) Chain[T] {
 	return Chain[T]{Value: Map(c.Value, transform)}
 }
 
+// Max returns the maximum value in the slice.
+// This function can currently only compare numbers reliably.
+// This function uses operator <.
+// Breaks the Chain.
+func (c Chain[T]) Max() T {
+	return Max(c.Value)
+}
+
+// Min returns the minimum value in the slice.
+// This function can currently only compare numbers reliably.
+// This function uses operator <.
+// Breaks the Chain.
+func (c Chain[T]) Min() T {
+	return Min(c.Value)
+}
+
+// Partition splits the slice into two slices: one whose elements all satisfy predicate
+// and one whose elements all do not satisfy predicate.
+func (c Chain[T]) Partition(predicate func(T) bool) ([]T, []T) {
+	return Partition(c.Value, predicate)
+}
+
 // Reduce combine a list of values into a single value and breaks the Chain.
 // acc is the initial state, and each successive step of it should be returned by the reduction function.
 func (c Chain[T]) Reduce(reducer func(n, acc T) T, acc T) T {

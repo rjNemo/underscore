@@ -57,4 +57,26 @@ func TestChain(t *testing.T) {
 		Find(func(n int) bool { return n%4 == 0 })
 	assert.Equal(t, 4, f)
 	assert.NoError(t, err)
+
+	w = 64
+	assert.Equal(t, w, u.NewChain(nums).
+		Filter(isEven).
+		Map(toSquare).
+		Max())
+
+	w = 4
+	assert.Equal(t, w, u.NewChain(nums).
+		Filter(isEven).
+		Map(toSquare).
+		Min())
+
+	wFirstHalf := []int{4, 16}
+	wSecondHalf := []int{36, 64}
+	firstHalf, secondHalf := u.NewChain(nums).
+		Filter(isEven).
+		Map(toSquare).
+		Partition(func(n int) bool { return n < 20 })
+
+	assert.Equal(t, wFirstHalf, firstHalf)
+	assert.Equal(t, wSecondHalf, secondHalf)
 }
