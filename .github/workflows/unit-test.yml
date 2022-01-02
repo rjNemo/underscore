@@ -1,13 +1,6 @@
-name: Go
-
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
+name: Unit Tests
+on: [ push, pull_request ]
 jobs:
-
   build:
     name: Build
     runs-on: ubuntu-latest
