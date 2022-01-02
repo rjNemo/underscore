@@ -6,7 +6,7 @@ import (
 	u "github.com/rjNemo/underscore"
 )
 
-func main() {
+func chaining() {
 	sum := u.NewChain([]int{1, 2, 3, 4, 5, 6, 7, 8, 9}).
 		// filter even numbers from the slice
 		Filter(func(n int) bool { return n%2 == 0 }).
