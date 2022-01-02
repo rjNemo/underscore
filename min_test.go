@@ -9,7 +9,7 @@ import (
 )
 
 func TestMin(t *testing.T) {
-	nums := []int{1, 9, 2, 8, 3, 7, 4, 6, 5}
+	nums := []int{9, 2, 1, 8, 3, 7, 4, 6, 5}
 	want := 1
 	assert.Equal(t, want, u.Min(nums))
 }

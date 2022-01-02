@@ -13,3 +13,9 @@ func TestEvery(t *testing.T) {
 	isOdd := func(n int) bool { return n%2 != 0 }
 	assert.True(t, u.Every(nums, isOdd))
 }
+
+func TestNotEvery(t *testing.T) {
+	nums := []int{1, 3, 5, 7, 9, 10}
+	isOdd := func(n int) bool { return n%2 != 0 }
+	assert.False(t, u.Every(nums, isOdd))
+}
