@@ -102,10 +102,10 @@ go test ./...
 
 ### Chaining
 
-Calling `NewChain` will cause all future method calls to return wrapped objects. When you've finished the computation,
+Calling `chain.Of` will cause all future method calls to return wrapped values. When you've finished the computation,
 call `Value` to retrieve the final value.
 
-Methods not returning a slice such as `Reduce`, `Every`, `Some`, will break the chain and return `Value` instantly.
+Methods not returning a slice such as `Reduce`, `Every`, `Some`, will break the `Chain` and return `Value` instantly.
 
 ## Built With
 
