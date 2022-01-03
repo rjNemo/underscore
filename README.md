@@ -6,8 +6,6 @@
 
 ![underscore](https://socialify.git.ci/rjNemo/underscore/image?description=1&font=Raleway&language=1&logo=https%3A%2F%2Fgithub.com%2FrjNemo%2Funderscore%2Fblob%2Fmain%2Fdocs%2Fstatic%2Flogo.png%3Fraw%3Dtrue&name=1&pattern=Floating%20Cogs&theme=Light)
 
-
-
 `underscore` is a `Go` library providing useful functional programming helpers without extending any built-in objects.
 
 It is mostly a port from the `underscore.js` library based on generics brought by `go1.18`.
@@ -88,9 +86,9 @@ go test ./...
 
 ### Collections
 
+- `All`
 - `Contains` (only numerics values at the moment)
 - `Each`
-- `Every`
 - `Filter`
 - `Find`
 - `Map`
@@ -105,7 +103,7 @@ go test ./...
 Calling `chain.Of` will cause all future method calls to return wrapped values. When you've finished the computation,
 call `Value` to retrieve the final value.
 
-Methods not returning a slice such as `Reduce`, `Every`, `Some`, will break the `Chain` and return `Value` instantly.
+Methods not returning a slice such as `Reduce`, `All`, `Some`, will break the `Chain` and return `Value` instantly.
 
 ## Built With
 

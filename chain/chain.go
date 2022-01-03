@@ -13,7 +13,7 @@ type Chain[T constraints.Ordered] struct {
 // Of starts a Chain. All future method calls will return Chain structs. When you've finished the computation,
 // call Value to retrieve the final value.
 //
-// Methods not returning a slice such as Reduce, Every, Some, will break the chain and return Value instantly.
+// Methods not returning a slice such as Reduce, All, Some, will break the chain and return Value instantly.
 func Of[T constraints.Ordered](value []T) Chain[T] {
 	return Chain[T]{Value: value}
 }
@@ -29,11 +29,11 @@ func (c Chain[T]) Each(action func(T)) {
 	u.Each(c.Value, action)
 }
 
-// Every returns true if all the values in the slice pass the predicate truth test.
+// All returns true if all the values in the slice pass the predicate truth test.
 // Short-circuits and stops traversing the slice if a false element is found.
 // Breaks the Chain.
-func (c Chain[T]) Every(predicate func(T) bool) bool {
-	return u.Every(c.Value, predicate)
+func (c Chain[T]) All(predicate func(T) bool) bool {
+	return u.All(c.Value, predicate)
 }
 
 // Filter looks through each value in the slice, returning a slice of all the values that pass a truth test (predicate).

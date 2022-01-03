@@ -8,14 +8,14 @@ import (
 	u "github.com/rjNemo/underscore"
 )
 
-func TestEvery(t *testing.T) {
+func TestAll(t *testing.T) {
 	nums := []int{1, 3, 5, 7, 9}
 	isOdd := func(n int) bool { return n%2 != 0 }
-	assert.True(t, u.Every(nums, isOdd))
+	assert.True(t, u.All(nums, isOdd))
 }
 
-func TestNotEvery(t *testing.T) {
+func TestNotAll(t *testing.T) {
 	nums := []int{1, 3, 5, 7, 9, 10}
 	isOdd := func(n int) bool { return n%2 != 0 }
-	assert.False(t, u.Every(nums, isOdd))
+	assert.False(t, u.All(nums, isOdd))
 }

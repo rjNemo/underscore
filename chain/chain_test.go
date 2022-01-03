@@ -57,7 +57,7 @@ func TestChainFilterMapEvery(t *testing.T) {
 	assert.True(t, chain.Of(nums).
 		Filter(isEven).
 		Map(toSquare).
-		Every(func(n int) bool { return n%4 == 0 }))
+		All(func(n int) bool { return n%4 == 0 }))
 }
 
 func TestChainFilterMapFind(t *testing.T) {
