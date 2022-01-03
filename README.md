@@ -87,6 +87,7 @@ go test ./...
 ### Collections
 
 - `All`
+- `Any`
 - `Contains` (only numerics values at the moment)
 - `Each`
 - `Filter`
@@ -96,14 +97,13 @@ go test ./...
 - `Min`
 - `Partition`
 - `Reduce`
-- `Some`
 
 ### Chaining
 
 Calling `chain.Of` will cause all future method calls to return wrapped values. When you've finished the computation,
 call `Value` to retrieve the final value.
 
-Methods not returning a slice such as `Reduce`, `All`, `Some`, will break the `Chain` and return `Value` instantly.
+Methods not returning a slice such as `Reduce`, `All`, `Any`, will break the `Chain` and return `Value` instantly.
 
 ## Built With
 

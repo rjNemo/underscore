@@ -13,9 +13,23 @@ type Chain[T constraints.Ordered] struct {
 // Of starts a Chain. All future method calls will return Chain structs. When you've finished the computation,
 // call Value to retrieve the final value.
 //
-// Methods not returning a slice such as Reduce, All, Some, will break the chain and return Value instantly.
+// Methods not returning a slice such as Reduce, All, Any, will break the chain and return Value instantly.
 func Of[T constraints.Ordered](value []T) Chain[T] {
 	return Chain[T]{Value: value}
+}
+
+// All returns true if all the values in the slice pass the predicate truth test.
+// Short-circuits and stops traversing the slice if a false element is found.
+// Breaks the Chain.
+func (c Chain[T]) All(predicate func(T) bool) bool {
+	return u.All(c.Value, predicate)
+}
+
+// Any returns true if any of the values in the slice pass the predicate truth test.
+// Short-circuits and stops traversing the slice if a true element is found.
+// Breaks the Chain.
+func (c Chain[T]) Any(predicate func(T) bool) bool {
+	return u.Any(c.Value, predicate)
 }
 
 // Contains returns true if the value is present in the slice and breaks the Chain.
@@ -27,13 +41,6 @@ func (c Chain[T]) Contains(value T) bool {
 // Breaks the Chain.
 func (c Chain[T]) Each(action func(T)) {
 	u.Each(c.Value, action)
-}
-
-// All returns true if all the values in the slice pass the predicate truth test.
-// Short-circuits and stops traversing the slice if a false element is found.
-// Breaks the Chain.
-func (c Chain[T]) All(predicate func(T) bool) bool {
-	return u.All(c.Value, predicate)
 }
 
 // Filter looks through each value in the slice, returning a slice of all the values that pass a truth test (predicate).
@@ -84,11 +91,4 @@ func (c Chain[T]) Partition(predicate func(T) bool) ([]T, []T) {
 // acc is the initial state, and each successive step of it should be returned by the reduction function.
 func (c Chain[T]) Reduce(reducer func(n, acc T) T, acc T) T {
 	return u.Reduce(c.Value, reducer, acc)
-}
-
-// Some returns true if any of the values in the slice pass the predicate truth test.
-// Short-circuits and stops traversing the slice if a true element is found.
-// Breaks the Chain.
-func (c Chain[T]) Some(predicate func(T) bool) bool {
-	return u.Some(c.Value, predicate)
 }

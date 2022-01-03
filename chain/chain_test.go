@@ -53,7 +53,7 @@ func TestChainFilterMapEach(t *testing.T) {
 	assert.Equal(t, want, res)
 }
 
-func TestChainFilterMapEvery(t *testing.T) {
+func TestChainFilterMapAll(t *testing.T) {
 	assert.True(t, chain.Of(nums).
 		Filter(isEven).
 		Map(toSquare).
@@ -97,11 +97,11 @@ func TestChainFilterMapPartition(t *testing.T) {
 	assert.Equal(t, wantRight, right)
 }
 
-func TestChainFilterMapSome(t *testing.T) {
+func TestChainFilterMapAny(t *testing.T) {
 	assert.True(t, chain.Of(nums).
 		Filter(isEven).
 		Map(toSquare).
-		Some(func(n int) bool { return n%64 == 0 }))
+		Any(func(n int) bool { return n%64 == 0 }))
 }
 
 var nums = []int{1, 2, 3, 4, 5, 6, 7, 8, 9}

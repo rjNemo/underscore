@@ -3,12 +3,12 @@ title: "Chaining"
 date: 2021-12-31T13:11:41-04:00
 ---
 
-## NewChain
+## Of
 
-Calling `NewChain` will cause all future method calls to return wrapped objects. When you've finished the computation,
+Calling `Of` will cause all future method calls to return wrapped objects. When you've finished the computation,
 call `Value` to retrieve the final value.
 
-Methods not returning a collection such as `Reduce`, `All`, `Some`, will break the chain and return `Value` instantly.
+Methods not returning a collection such as `Reduce`, `All`, `Any`, will break the chain and return `Value` instantly.
 
 ```go
 package main
