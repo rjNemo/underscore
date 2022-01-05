@@ -3,9 +3,6 @@
 ![License](https://img.shields.io/github/license/rjNemo/underscore?style=for-the-badge)
 ![Go version](https://img.shields.io/github/go-mod/go-version/rjNemo/underscore?style=for-the-badge)
 ![test coverage](https://img.shields.io/badge/Test%20Coverage-100%25-brightgreen.svg?longCache=true&style=for-the-badge)
-[![Actions Status](https://github.com/rjNemo/underscore/workflows/tests/badge.svg)](https://github.com/rjNemo/underscore/actions)
-[![codecov](https://codecov.io/gh/rjNemo/underscore/branch/master/graph/badge.svg)](https://codecov.io/gh/rjNemo/underscore?flag=unittests&style=for-the-badge)
-![Codecov](https://img.shields.io/codecov/c/github/rjNemo/underscore?flag=unittests&style=for-the-badge&token=7106da3d-7479-471f-ae37-e3680b62063d%29)
 
 ![underscore](https://socialify.git.ci/rjNemo/underscore/image?description=1&font=Raleway&language=1&logo=https%3A%2F%2Fgithub.com%2FrjNemo%2Funderscore%2Fblob%2Fmain%2Fdocs%2Fstatic%2Flogo.png%3Fraw%3Dtrue&name=1&pattern=Floating%20Cogs&theme=Light)
 

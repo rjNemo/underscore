@@ -24,10 +24,10 @@ jobs:
           fi
       - name: Test
         run: go test -v ./...
-      - name: Upload coverage report
-        uses: codecov/codecov-action@v2.1.0
-        with:
-          token: 7106da3d-7479-471f-ae37-e3680b62063d
-          files: ./coverage.txt
-          flags: unittests
-          name: codecov-umbrella
+#      - name: Upload coverage report
+#        uses: codecov/codecov-action@v2.1.0
+#        with:
+#          token: 7106da3d-7479-471f-ae37-e3680b62063d
+#          files: ./coverage.txt
+#          flags: unittests
+#          name: codecov-umbrella
