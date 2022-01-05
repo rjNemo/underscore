@@ -25,4 +25,10 @@ jobs:
       - name: Test
         run: go test -v ./...
       - name: Upload coverage to Codecov
-        run: bash <(curl -s https://codecov.io/bash)
+      - name: Upload coverage report
+        uses: codecov/codecov-action@v1.0.2
+        with:
+          token: 7106da3d-7479-471f-ae37-e3680b62063d
+          file: ./coverage.txt
+          flags: unittests
+          name: codecov-umbrella

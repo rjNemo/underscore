@@ -6,6 +6,9 @@
 
 ![underscore](https://socialify.git.ci/rjNemo/underscore/image?description=1&font=Raleway&language=1&logo=https%3A%2F%2Fgithub.com%2FrjNemo%2Funderscore%2Fblob%2Fmain%2Fdocs%2Fstatic%2Flogo.png%3Fraw%3Dtrue&name=1&pattern=Floating%20Cogs&theme=Light)
 
+[![Actions Status](https://github.com/rjNemo/underscore/workflows/build/badge.svg)](https://github.com/rjNemo/underscore/actions)
+[![codecov](https://codecov.io/gh/rjNemo/underscore/branch/master/graph/badge.svg)](https://codecov.io/gh/rjNemo/underscore)
+
 `underscore` is a `Go` library providing useful functional programming helpers without extending any built-in objects.
 
 It is mostly a port from the `underscore.js` library based on generics brought by `go1.18`.
