@@ -1,6 +1,6 @@
 FROM golang:1.18beta1-bullseye
 
-#WORKDIR /app
+WORKDIR /lib
 
 COPY go.* ./
 RUN go mod download
