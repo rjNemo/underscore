@@ -1,4 +1,4 @@
-name: Unit Tests
+name: Tests
 on: [ push, pull_request ]
 jobs:
   build:
@@ -28,6 +28,6 @@ jobs:
         uses: codecov/codecov-action@v2.1.0
         with:
           token: 7106da3d-7479-471f-ae37-e3680b62063d
-          files: ./lib/coverage.txt
+          files: ./coverage.txt
           flags: unittests
           name: codecov-umbrella
