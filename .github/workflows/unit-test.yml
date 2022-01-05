@@ -24,7 +24,6 @@ jobs:
           fi
       - name: Test
         run: go test -v ./...
-      - name: Upload coverage to Codecov
       - name: Upload coverage report
         uses: codecov/codecov-action@v2.1.0
         with:
