@@ -74,10 +74,10 @@ And that's it.
 
 ## Tests
 
-Building the docker image will run the tests automatically. Otherwise, you can simply run:
+To run the unit tests, you can simply run:
 
 ```shell
-go test ./...
+make test
 ```
 
 ## Functions

@@ -6,5 +6,3 @@ COPY go.* ./
 RUN go mod download
 
 COPY . ./
-
-RUN go test ./... -cover

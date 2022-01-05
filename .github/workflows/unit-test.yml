@@ -24,3 +24,5 @@ jobs:
           fi
       - name: Test
         run: go test -v ./...
+      - name: Upload coverage to Codecov
+        run: bash <(curl -s https://codecov.io/bash)
