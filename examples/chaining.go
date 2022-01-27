@@ -10,6 +10,6 @@ func chaining() int {
 		Filter(func(n int) bool { return n%2 == 0 }).
 		// square every number in the slice
 		Map(func(n int) int { return n * n }).
-		// reduce to the sum
+		// reduce the slice to its sum
 		Reduce(func(n, acc int) int { return n + acc }, 0)
 }
