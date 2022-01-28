@@ -20,3 +20,14 @@ func TestEach(t *testing.T) {
 
 	assert.Equal(t, want, res)
 }
+
+func TestEachReturnsInitialSlice(t *testing.T) {
+	names := []string{"Alice", "Bob", "Charles"}
+	want := []string{"Alice", "Bob", "Charles"}
+
+	res := make([]string, 0)
+
+	assert.Equal(t, want, underscore.Each(names, func(n string) {
+		res = append(res, fmt.Sprintf("Hi %s", n))
+	}))
+}
