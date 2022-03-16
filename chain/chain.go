@@ -1,7 +1,7 @@
 package chain
 
 import (
-	"constraints"
+	"golang.org/x/exp/constraints"
 
 	u "github.com/rjNemo/underscore"
 )

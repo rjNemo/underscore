@@ -1,4 +1,4 @@
-FROM golang:1.18beta1-alpine
+FROM golang:1.18-alpine
 
 WORKDIR /lib
 
