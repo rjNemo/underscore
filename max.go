@@ -1,6 +1,6 @@
 package underscore
 
-import "constraints"
+import "golang.org/x/exp/constraints"
 
 // Max returns the maximum value in the slice.
 // This function can currently only compare numbers reliably.

@@ -1,4 +1,4 @@
-FROM golang:1.18beta1-alpine
+FROM golang:1.18-alpine
 
 ENV CGO_ENABLED 0
 RUN apk update --no-cache

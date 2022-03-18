@@ -1,6 +1,6 @@
 package underscore
 
-import "constraints"
+import "golang.org/x/exp/constraints"
 
 // Sum adds elements of the slice.
 func Sum[T constraints.Ordered](values []T) (sum T) {
