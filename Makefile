@@ -1,4 +1,4 @@
-TEST = "CGO_ENABLED=0 go test ./... -coverpkg=./... -coverprofile coverage.txt -covermode=atomic; go tool cover -func coverage.txt"
+TEST = "go test ./... -coverpkg=./... -coverprofile coverage.out -covermode=atomic; go tool cover -func coverage.out; rm coverage.out"
 
 build:
 	docker build . -t underscore:latest
