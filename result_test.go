@@ -37,5 +37,5 @@ func isAnswerToLife(num int) u.Result[string] {
 		res := "You get it"
 		return u.ToResult(&res, nil)
 	}
-	return u.ToResult[string](nil, errors.New("nope")) // u.Err[string]{Err: errors.New("nope")}
+	return u.ToResult[string](nil, errors.New("nope"))
 }
