@@ -12,12 +12,12 @@ jobs:
         with:
           go-version: '1.18'
       - name: Run tests with coverage
-        run: go test -race -coverprofile=coverage.out -covermode=atomic ./...
+        run: go test -coverprofile=coverage.out -covermode=count ./...
       - uses: codecov/codecov-action@v2
         with:
-          token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
-          files: ./coverage.out # optional
-          flags: unittests # optional
-          name: codecov-umbrella # optional
-          fail_ci_if_error: true # optional (default = false)
-          verbose: true # optional (default = false)
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./coverage.out
+          flags: unittests
+          name: codecov-umbrella
+          fail_ci_if_error: true
+          verbose: true
