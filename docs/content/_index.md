@@ -12,7 +12,6 @@ title: underscore
 
 It is mostly a port from the `underscore.js` library based on generics brought by `go1.18`.
 
-
 ## Quick Start
 
 Install the library using
@@ -21,7 +20,7 @@ Install the library using
 go get github.com/rjNemo/underscore
 ```
 
-Please check out the [examples](examples) to see how to use the library.
+Please check out the [examples](https://github.com/rjNemo/underscore/tree/main/examples) to see how to use the library.
 
 ```go
 package main

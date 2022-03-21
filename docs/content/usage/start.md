@@ -11,7 +11,7 @@ Install the library using
 go get github.com/rjNemo/underscore
 ```
 
-Please check out the [examples](examples) to see how to use the library.
+Please check out the [examples](https://github.com/rjNemo/underscore/tree/main/examples) to see how to use the library.
 
 ```go
 package main
@@ -41,10 +41,11 @@ purposes.
 
 ### Prerequisites
 
-You need at least `go1.18` for development. The project is shipped with a [Dockerfile](Dockerfile) based on `go1.18`. If
-you prefer local development, at the moment the easiest way to do it:
+You need at least `go1.18` for development. The project is shipped with
+a [Dockerfile](https://github.com/rjNemo/underscore/tree/main/Dockerfile) based on `go1.18`. If you prefer local
+development, at the moment the easiest way to do it:
 
-```shell script
+```shell
 go install golang.org/dl/go1.18beta1@latest
 go1.18beta1 download
 ```

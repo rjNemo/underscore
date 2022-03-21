@@ -3,8 +3,8 @@ title: "Drop"
 date: 2022-03-21T13:48:21-04:00
 ---
 
-`Drop` returns the rest of the elements in a slice.
-Pass an index to return the values of the slice from that index onward.
+`Drop` returns the rest of the elements in a slice. Pass an index to return the values of the slice from that index
+onward.
 
 ```go
 package main
