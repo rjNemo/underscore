@@ -1,0 +1,13 @@
+---
+more:
+  - name: News
+    ref: "/#"
+    icon: "gdoc_notification"
+  - name: Releases
+    ref: "https://github.com/rjNemo/underscore/releases"
+    external: true
+    icon: "gdoc_download"
+  - name: "View Source"
+    ref: "https://github.com/rjNemo/underscore"
+    external: true
+    icon: "gdoc_github"
