@@ -1,4 +1,4 @@
-baseURL = "http://localhost"
+baseURL = "https://underscore.onrender.com/"
 title = "underscore"
 theme = "hugo-geekdoc"
 

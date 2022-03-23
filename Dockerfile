@@ -11,4 +11,3 @@ COPY go.* ./
 RUN go mod download
 
 COPY . ./
-

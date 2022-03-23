@@ -12,6 +12,8 @@ It is mostly a port from the `underscore.js` library based on generics brought b
 
 ## Usage
 
+📚 Follow this link for the [documentation](https://underscore.onrender.com/).
+
 Install the library using
 
 ```shell
