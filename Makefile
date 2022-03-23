@@ -6,5 +6,8 @@ build:
 test: build
 	docker run --name underscore --rm -i -t underscore sh -c $(TEST)
 
-doc:
+docs:
 	cd docs && hugo server -D
+
+build-docs:
+	cd docs && hugo --gc --minify
