@@ -9,9 +9,9 @@ import (
 )
 
 func TestDifference(t *testing.T) {
-	a := []int{1, 3, 5, 6, 7, 9}
-	b := []int{9, 7, 5, 4}
+	nums := []int{1, 3, 5, 6, 7, 9}
+	reject := []int{9, 7, 5, 4}
 	want := []int{1, 3, 6}
 
-	assert.Equal(t, want, u.Difference(a, b))
+	assert.Equal(t, want, u.Difference(nums, reject))
 }
