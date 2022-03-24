@@ -4,7 +4,7 @@
 ![Go version](https://img.shields.io/github/go-mod/go-version/rjNemo/underscore?style=for-the-badge)
 ![test coverage](https://img.shields.io/codecov/c/github/rjNemo/underscore?style=for-the-badge)
 
-![underscore](https://socialify.git.ci/rjNemo/underscore/image?description=1&font=Raleway&language=1&logo=https%3A%2F%2Fgithub.com%2FrjNemo%2Funderscore%2Fblob%2Fmain%2Fdocs%2Fstatic%2Flogo.png%3Fraw%3Dtrue&name=1&pattern=Floating%20Cogs&theme=Light)
+![underscore](https://socialify.git.ci/rjNemo/underscore/image?description=1&descriptionEditable=Useful%20functional%20programming%20helpers%20for%20Go%201.18%20and%20beyond&font=Raleway&language=1&logo=https%3A%2F%2Fgithub.com%2FrjNemo%2Funderscore%2Fblob%2Fmain%2Fdocs%2Fstatic%2Flogo.png&owner=1&pattern=Floating%20Cogs&stargazers=1&theme=Light)
 
 `underscore` is a `Go` library providing useful functional programming helpers without extending any built-in objects.
 
