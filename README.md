@@ -1,14 +1,15 @@
 # Underscore
 
 ![License](https://img.shields.io/github/license/rjNemo/underscore?style=for-the-badge)
-![Go version](https://img.shields.io/github/go-mod/go-version/rjNemo/underscore?style=for-the-badge)
-![test coverage](https://img.shields.io/codecov/c/github/rjNemo/underscore?style=for-the-badge)
+![Go version](https://img.shields.io/github/go-mod/go-version/rjNemo/underscore?style=for-the-badge&logo=go)
+![Go report](https://goreportcard.com/badge/github.com/rjNemo/underscore?style=for-the-badge)
+![test coverage](https://img.shields.io/codecov/c/github/rjNemo/underscore?style=for-the-badge&logo=codecov)
 
 ![underscore](https://socialify.git.ci/rjNemo/underscore/image?description=1&descriptionEditable=Useful%20functional%20programming%20helpers%20for%20Go%201.18%20and%20beyond&font=Raleway&language=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FrjNemo%2Funderscore%2Fmain%2Fdocs%2Fstatic%2Flogo.png&owner=1&pattern=Floating%20Cogs&stargazers=1&theme=Light)
 
 `underscore` is a `Go` library providing useful functional programming helpers without extending any built-in objects.
 
-It is mostly a port from the `underscore.js` library based on generics brought by `go1.18`.
+It is mostly a port from the `underscore.js` library based on generics brought by `Go 1.18`.
 
 ## Usage
 
@@ -50,13 +51,10 @@ purposes.
 
 ### Prerequisites
 
-You need at least `go1.18` for development. The project is shipped with a [Dockerfile](Dockerfile) based on `go1.18`. If
-you prefer local development, at the moment the easiest way to do it:
+You need at least `go1.18` for development. The project is shipped with a [Dockerfile](Dockerfile) based on `go1.18`.
 
-```shell script
-go install golang.org/dl/go1.18beta1@latest
-go1.18beta1 download
-```
+If you prefer local development, navigate to the [official
+download page](https://go.dev/dl/) and install version `1.18` or beyond.
 
 ### Installing
 
