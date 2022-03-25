@@ -42,13 +42,10 @@ purposes.
 ### Prerequisites
 
 You need at least `go1.18` for development. The project is shipped with
-a [Dockerfile](https://github.com/rjNemo/underscore/tree/main/Dockerfile) based on `go1.18`. If you prefer local
-development, at the moment the easiest way to do it:
+a [Dockerfile](https://github.com/rjNemo/underscore/tree/main/Dockerfile) based on `go1.18`.
 
-```shell
-go install golang.org/dl/go1.18beta1@latest
-go1.18beta1 download
-```
+If you prefer local development, navigate to the [official
+download page](https://go.dev/dl/) and install version `1.18` or beyond.
 
 ### Installing
 
