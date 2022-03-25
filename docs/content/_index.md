@@ -3,7 +3,7 @@ title: underscore
 ---
 
 ![License](https://img.shields.io/github/license/rjNemo/underscore?style=for-the-badge)
-![Go version](https://img.shields.io/github/go-mod/go-version/rjNemo/underscore?style=for-the-badge&logo=go)
+[![Go version](https://img.shields.io/github/go-mod/go-version/rjNemo/underscore?style=for-the-badge&logo=go)](https://pkg.go.dev/github.com/rjNemo/underscore)
 ![Go report](https://goreportcard.com/badge/github.com/rjNemo/underscore?style=for-the-badge)
 ![test coverage](https://img.shields.io/codecov/c/github/rjNemo/underscore?style=for-the-badge&logo=codecov)
 
