@@ -6,6 +6,6 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestChainingExample(t *testing.T) {
-	assert.Equal(t, 120, chaining())
+func TestPipingExample(t *testing.T) {
+	assert.Equal(t, 120, piping())
 }

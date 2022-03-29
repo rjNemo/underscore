@@ -1,18 +1,18 @@
-package chain_test
+package underscore_test
 
 import (
 	"testing"
 
-	"github.com/stretchr/testify/assert"
+	u "github.com/rjNemo/underscore"
 
-	"github.com/rjNemo/underscore/chain"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestChainFilter(t *testing.T) {
 	want := []int{2, 4, 6, 8}
 	assert.Equal(t,
 		want,
-		chain.Of(nums).Filter(isEven).Value,
+		u.NewPipe(nums).Filter(isEven).Value,
 	)
 }
 
@@ -20,7 +20,7 @@ func TestChainFilterMap(t *testing.T) {
 	want := []int{4, 16, 36, 64}
 	assert.Equal(t,
 		want,
-		chain.Of(nums).
+		u.NewPipe(nums).
 			Filter(isEven).
 			Map(toSquare).
 			Value)
@@ -30,14 +30,14 @@ func TestChainFilterMapReduce(t *testing.T) {
 	want := 120
 	assert.Equal(t,
 		want,
-		chain.Of(nums).
+		u.NewPipe(nums).
 			Filter(isEven).
 			Map(toSquare).
 			Reduce(sum, 0))
 }
 
 func TestChainFilterMapContains(t *testing.T) {
-	assert.True(t, chain.Of(nums).
+	assert.True(t, u.NewPipe(nums).
 		Filter(isEven).
 		Map(toSquare).
 		Contains(16))
@@ -46,7 +46,7 @@ func TestChainFilterMapContains(t *testing.T) {
 func TestChainFilterMapEach(t *testing.T) {
 	want := []int{5, 17, 37, 65}
 	res := make([]int, 0)
-	chain.Of(nums).
+	u.NewPipe(nums).
 		Filter(isEven).
 		Map(toSquare).
 		Each(func(n int) { res = append(res, n+1) })
@@ -54,14 +54,14 @@ func TestChainFilterMapEach(t *testing.T) {
 }
 
 func TestChainFilterMapAll(t *testing.T) {
-	assert.True(t, chain.Of(nums).
+	assert.True(t, u.NewPipe(nums).
 		Filter(isEven).
 		Map(toSquare).
 		All(func(n int) bool { return n%4 == 0 }))
 }
 
 func TestChainFilterMapFind(t *testing.T) {
-	n, err := chain.Of(nums).
+	n, err := u.NewPipe(nums).
 		Filter(isEven).
 		Map(toSquare).
 		Find(func(n int) bool { return n%4 == 0 })
@@ -71,7 +71,7 @@ func TestChainFilterMapFind(t *testing.T) {
 
 func TestChainFilterMapMax(t *testing.T) {
 	want := 64
-	assert.Equal(t, want, chain.Of(nums).
+	assert.Equal(t, want, u.NewPipe(nums).
 		Filter(isEven).
 		Map(toSquare).
 		Max())
@@ -79,7 +79,7 @@ func TestChainFilterMapMax(t *testing.T) {
 
 func TestChainFilterMapMin(t *testing.T) {
 	w := 4
-	assert.Equal(t, w, chain.Of(nums).
+	assert.Equal(t, w, u.NewPipe(nums).
 		Filter(isEven).
 		Map(toSquare).
 		Min())
@@ -88,7 +88,7 @@ func TestChainFilterMapMin(t *testing.T) {
 func TestChainFilterMapPartition(t *testing.T) {
 	wantLeft := []int{4, 16}
 	wantRight := []int{36, 64}
-	left, right := chain.Of(nums).
+	left, right := u.NewPipe(nums).
 		Filter(isEven).
 		Map(toSquare).
 		Partition(func(n int) bool { return n < 20 })
@@ -98,7 +98,7 @@ func TestChainFilterMapPartition(t *testing.T) {
 }
 
 func TestChainFilterMapAny(t *testing.T) {
-	assert.True(t, chain.Of(nums).
+	assert.True(t, u.NewPipe(nums).
 		Filter(isEven).
 		Map(toSquare).
 		Any(func(n int) bool { return n%64 == 0 }))
