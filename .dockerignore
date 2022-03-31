@@ -5,3 +5,4 @@
 .idea/
 .golangci.yml
 coverage.out
+.trivycache/

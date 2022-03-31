@@ -1,10 +1,10 @@
 ---
-title: "Of"
+title: "NewPipe"
 date: 2021-12-31T13:11:41-04:00
 ---
 
 
-Calling `Of` will cause all future method calls to return wrapped objects. When you've finished the computation,
+Calling `NewPipe` will cause all future method calls to return wrapped objects. When you've finished the computation,
 call `Value` to retrieve the final value.
 
 Methods not returning a collection such as `Reduce`, `All`, `Any`, will break the chain and return `Value` instantly.
@@ -14,11 +14,11 @@ package main
 
 import (
 	"fmt"
-	"github.com/rjNemo/underscore/chain"
+	u "github.com/rjNemo/underscore"
 )
 
 func main() {
-	sum := chain.Of([]int{1, 2, 3, 4, 5, 6, 7, 8, 9}).
+	sum := u.NewPipe([]int{1, 2, 3, 4, 5, 6, 7, 8, 9}).
 		// filter even numbers from the slice
 		Filter(func(n int) bool { return n%2 == 0 }).
 		// square every number in the slice

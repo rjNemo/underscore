@@ -1,11 +1,11 @@
 package examples
 
 import (
-	"github.com/rjNemo/underscore/chain"
+	u "github.com/rjNemo/underscore"
 )
 
-func chaining() int {
-	return chain.Of([]int{1, 2, 3, 4, 5, 6, 7, 8, 9}).
+func piping() int {
+	return u.NewPipe([]int{1, 2, 3, 4, 5, 6, 7, 8, 9}).
 		// filter even numbers from the slice
 		Filter(func(n int) bool { return n%2 == 0 }).
 		// square every number in the slice
