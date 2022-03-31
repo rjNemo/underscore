@@ -1,5 +1,5 @@
 ---
-title: underscore
+title: _Underscore
 ---
 
 ![License](https://img.shields.io/github/license/rjNemo/underscore?style=for-the-badge)
