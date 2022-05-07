@@ -18,7 +18,7 @@ It is mostly a port from the `underscore.js` library based on generics brought b
 Install the library using
 
 ```shell
-go get github.com/rjNemo/underscore
+go get github.com/rjNemo/underscore@0.4.0
 ```
 
 Please check out the [examples](examples) to see how to use the library.
