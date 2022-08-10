@@ -91,6 +91,7 @@ make test
 - `Contains` (only numerics values at the moment)
 - `Each`
 - `Filter`
+- `Flatmap`
 - `Find`
 - `Map`
 - `Max`
