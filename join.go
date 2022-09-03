@@ -1,7 +1,7 @@
 package underscore
 
 // Joins two slices together and returns a Tuple of [T, []P], the selectors allow you to pick the
-// keys from your structure you would like to join the sets together with
+// keys you want to use from your struct's to join the sets together
 func Join[T, P any, S comparable](
 	left []T,
 	right []P,
@@ -18,18 +18,17 @@ func Join[T, P any, S comparable](
 	return results
 }
 
-// Joins two slices together and returns a []R where R is defined by the output of your projection
-// function
-// The selectors allow you to pick the keys from your structure you would like to join the sets
-// together with.
-// While the projection functions allows you to reformat joined datasets contains in the
-// Tuple of [T, []P] into your own structure or type
-func JoinProject[T, P, R any, S comparable](
-	left []T,
-	right []P,
-	leftSelector func(T) S,
-	rightSelector func(P) S,
-	projection func(Tuple[T, []P]) R) (results []R) {
+// Joins two slices together and returns a []O where O is defined by the output
+// of your projection function
+// The selectors allow you to pick the keys from your structure to use as the join keys
+// While the projection functions allows you to reformat joined datasets
+// (Tuple of [T, []P]) into your own struct or type
+func JoinProject[L, R, O any, S comparable](
+	left []L,
+	right []R,
+	leftSelector func(L) S,
+	rightSelector func(R) S,
+	projection func(Tuple[L, []R]) O) (results []O) {
 
 	for _, x := range Join(left, right, leftSelector, rightSelector) {
 		results = append(results, projection(x))
