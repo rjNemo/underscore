@@ -14,6 +14,7 @@ scan:
 scan-config:
 	trivy config .
 
+.PHONY: docs
 docs:
 	cd docs && hugo server -D
 

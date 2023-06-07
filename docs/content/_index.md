@@ -9,10 +9,9 @@ title: _Underscore
 
 ![underscore](https://socialify.git.ci/rjNemo/underscore/image?description=1&font=KoHo&language=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FrjNemo%2Funderscore%2Fmain%2Fdocs%2Fstatic%2Flogo.png&owner=1&pattern=Floating%20Cogs&stargazers=1&theme=Dark)
 
-
 `underscore` is a `Go` library providing useful functional programming helpers without extending any built-in objects.
 
-It is mostly a port from the `underscore.js` library based on generics brought by `go1.18`.
+It is mostly a port from the `underscore.js` library based on generics available from `go1.18`.
 
 ## Quick Start
 
