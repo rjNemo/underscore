@@ -1,9 +1,10 @@
 package underscore
 
 import (
-	"github.com/stretchr/testify/assert"
 	"strings"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func Test_Count_Can_Count_Numbers(t *testing.T) {
@@ -21,7 +22,7 @@ type People struct {
 	Gender string
 }
 
-func Test_Count_Can_Count__People(t *testing.T) {
+func Test_Count_Can_Count_People(t *testing.T) {
 	people := []People{
 		{Name: "Andy", Age: 43, Gender: "M"},
 		{Name: "Fred", Age: 33, Gender: "M"},
