@@ -9,13 +9,13 @@ date: 2022-03-21T13:30:29-04:00
 package main
 
 import (
-	"fmt"
-	u "github.com/rjNemo/underscore"
+ "fmt"
+ u "github.com/rjNemo/underscore"
 )
 
 func main() {
-	nums := []int{1, 3, 5, 7, 9}
+ nums := []int{1, 3, 5, 7, 9}
 
-	fmt.Println(u.Contains(nums, 5)) // true 
+ fmt.Println(u.Contains(nums, 5)) // true
 }
 ```

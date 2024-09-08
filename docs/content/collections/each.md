@@ -9,17 +9,17 @@ date: 2022-03-21T13:30:59-04:00
 package main
 
 import (
-	"fmt"
-	u "github.com/rjNemo/underscore"
+ "fmt"
+ u "github.com/rjNemo/underscore"
 )
 
 func main() {
-	names := []string{"Alice", "Bob", "Charles"}
-	res := make([]string, 0)
+ names := []string{"Alice", "Bob", "Charles"}
+ res := make([]string, 0)
 
-	u.Each(names, func(n string) {
-		res = append(res, fmt.Sprintf("Hi %s", n))
-	})
-	fmt.Println(res) // {"Hi Alice", "Hi Bob", "Hi Charles"} 
+ u.Each(names, func(n string) {
+  res = append(res, fmt.Sprintf("Hi %s", n))
+ })
+ fmt.Println(res) // {"Hi Alice", "Hi Bob", "Hi Charles"}
 }
 ```

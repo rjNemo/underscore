@@ -10,13 +10,13 @@ onward.
 package main
 
 import (
-	"fmt"
-	u "github.com/rjNemo/underscore"
+ "fmt"
+ u "github.com/rjNemo/underscore"
 )
 
 func main() {
-	nums := []int{1, 9, 2, 8, 3, 7, 4, 6, 5}
+ nums := []int{1, 9, 2, 8, 3, 7, 4, 6, 5}
 
-	fmt.Println(u.Drop(nums, 3)) // {1, 9, 2, 3, 7, 4, 6, 5}
+ fmt.Println(u.Drop(nums, 3)) // {1, 9, 2, 3, 7, 4, 6, 5}
 }
 ```

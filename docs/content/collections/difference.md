@@ -9,14 +9,14 @@ Returns a copy of the array with all instances of the values that are not presen
 package main
 
 import (
-	"fmt"
-	u "github.com/rjNemo/underscore"
+ "fmt"
+ u "github.com/rjNemo/underscore"
 )
 
 func main() {
-	nums := []int{1, 3, 5, 6, 7, 9}
-	reject := []int{9, 7, 5, 4}
-	
-	fmt.Println(u.Difference(nums, reject)) // {1, 3, 6}
+ nums := []int{1, 3, 5, 6, 7, 9}
+ reject := []int{9, 7, 5, 4}
+
+ fmt.Println(u.Difference(nums, reject)) // {1, 3, 6}
 }
 ```

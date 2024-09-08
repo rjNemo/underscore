@@ -9,15 +9,15 @@ date: 2022-03-21T13:32:10-04:00
 package main
 
 import (
-	"fmt"
-	u "github.com/rjNemo/underscore"
+ "fmt"
+ u "github.com/rjNemo/underscore"
 )
 
 func main() {
-	nums := []int{1, 2, 3}
-	toSquare := func(n int) int {
-		return n * n
-	}
-	fmt.Println(u.Map(nums, toSquare)) // {1, 4, 9}
+ nums := []int{1, 2, 3}
+ toSquare := func(n int) int {
+  return n * n
+ }
+ fmt.Println(u.Map(nums, toSquare)) // {1, 4, 9}
 }
 ```

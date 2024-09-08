@@ -10,8 +10,8 @@ Flatmap flattens the input slice element into the new slice. FlatMap maps every 
 package main
 
 import (
-	"fmt"
-	u "github.com/rjNemo/underscore"
+ "fmt"
+ u "github.com/rjNemo/underscore"
 )
 
 func main() {

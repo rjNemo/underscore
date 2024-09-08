@@ -11,16 +11,16 @@ element, and doesn't traverse the entire slice.
 package main
 
 import (
-	"fmt"
-	u "github.com/rjNemo/underscore"
+ "fmt"
+ u "github.com/rjNemo/underscore"
 )
 
 func main() {
-	nums := []int{2, 4, 5, 6, 8, 0}
-	isOdd := func(n int) bool { return n%2 != 0 }
+ nums := []int{2, 4, 5, 6, 8, 0}
+ isOdd := func(n int) bool { return n%2 != 0 }
 
-	n, err := u.Find(nums, isOdd)
-	fmt.Println(n)   // 5
-	fmt.Println(err) // nil
+ n, err := u.Find(nums, isOdd)
+ fmt.Println(n)   // 5
+ fmt.Println(err) // nil
 }
 ```

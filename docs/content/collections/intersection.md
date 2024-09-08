@@ -11,8 +11,8 @@ package main
 
 
 import (
-	"fmt"
-	u "github.com/rjNemo/underscore"
+ "fmt"
+ u "github.com/rjNemo/underscore"
 )
 
 func main(){
@@ -22,3 +22,4 @@ func main(){
     fmt.Println(u.Intersection(a, b)) // {3, 5}
 }
 ```
+

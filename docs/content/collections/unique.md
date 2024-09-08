@@ -9,13 +9,13 @@ date: 2022-04-12T17:18:04-04:00
 package main
 
 import (
-	"fmt"
-	u "github.com/rjNemo/underscore"
+ "fmt"
+ u "github.com/rjNemo/underscore"
 )
 
 func main() {
-	nums := []int{1, 4, 2, 5, 3, 1, 5, 2, 8, 9}
-	
-	fmt.Println(u.Unique(nums)) // 1, 4, 2, 5, 3, 8, 9
+ nums := []int{1, 4, 2, 5, 3, 1, 5, 2, 8, 9}
+
+ fmt.Println(u.Unique(nums)) // 1, 4, 2, 5, 3, 8, 9
 }
 ```

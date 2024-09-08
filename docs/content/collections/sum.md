@@ -9,13 +9,13 @@ date: 2022-03-21T13:50:29-04:00
 package main
 
 import (
-	"fmt"
-	u "github.com/rjNemo/underscore"
+ "fmt"
+ u "github.com/rjNemo/underscore"
 )
 
 func main() {
-	nums := []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+ nums := []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
 
-	fmt.Println(u.Sum(nums)) // 45
+ fmt.Println(u.Sum(nums)) // 45
 }
 ```

@@ -10,13 +10,13 @@ the slice if a true element is found.
 package main
 
 import (
-	"fmt"
-	u "github.com/rjNemo/underscore"
+ "fmt"
+ u "github.com/rjNemo/underscore"
 )
 
 func main() {
-	nums := []int{1, 2, 4, 6, 8}
-	isEven := func(n int) bool { return n%2 == 0 }
-	fmt.Println(u.Any(nums, isEven)) // true
+ nums := []int{1, 2, 4, 6, 8}
+ isEven := func(n int) bool { return n%2 == 0 }
+ fmt.Println(u.Any(nums, isEven)) // true
 }
 ```

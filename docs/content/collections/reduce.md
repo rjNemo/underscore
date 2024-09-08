@@ -10,13 +10,13 @@ be returned by the reduction function.
 package main
 
 import (
-	"fmt"
-	u "github.com/rjNemo/underscore"
+ "fmt"
+ u "github.com/rjNemo/underscore"
 )
 
 func main() {
-	nums := []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
-	sum := func(n, acc int) int { return n + acc }
-	fmt.Println(u.Reduce(nums, sum, 0)) // 45
+ nums := []int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+ sum := func(n, acc int) int { return n + acc }
+ fmt.Println(u.Reduce(nums, sum, 0)) // 45
 }
 ```
