@@ -1,0 +1,21 @@
+FROM golang:1.23-alpine AS builder
+
+ENV CGO_ENABLED=0
+ENV GOOS=linux
+ENV GOARCH=amd64
+
+RUN apk -U upgrade --no-cache
+RUN apk add hugo
+
+WORKDIR /docs
+
+COPY go.* ./
+RUN go mod download
+
+COPY . .
+
+RUN hugo --gc --minify
+
+FROM scratch
+
+COPY --from=builder /docs/public /public
