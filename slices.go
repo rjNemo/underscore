@@ -8,14 +8,14 @@ import (
 
 // sort any slice ASENDING
 func SortSliceASC[T constraints.Ordered](s []T) {
-	sort.Slice(s, func(i, j int) bool {
+	sort.SliceStable(s, func(i, j int) bool {
 		return s[i] < s[j]
 	})
 }
 
 // sort any slice DESCENDING
 func SortSliceDESC[T constraints.Ordered](s []T) {
-	sort.Slice(s, func(i, j int) bool {
+	sort.SliceStable(s, func(i, j int) bool {
 		return s[i] > s[j]
 	})
 }
