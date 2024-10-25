@@ -3,8 +3,17 @@ package underscore
 // Convert values to pointers
 //
 // Instead of:
-// v = "value"
+// v := "value"
 // MyPointerVar = &v
+//
+// Or
+// v1 := "value1"
+// v2 := 100
+//
+//	obj := Obj{
+//		Field1: &v,
+//		Field2: &v2,
+//	}
 //
 // Use:
 // MyPointerVar = ToPointer("value")
