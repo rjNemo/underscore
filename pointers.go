@@ -1,6 +1,6 @@
 package underscore
 
-// Convert values to pointers
+// ToPointer Convert values to pointers
 //
 // Instead of:
 // v := "value"
