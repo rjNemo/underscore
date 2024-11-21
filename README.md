@@ -4,6 +4,7 @@
 [![Go version](https://img.shields.io/github/go-mod/go-version/rjNemo/underscore?style=for-the-badge&logo=go)](https://pkg.go.dev/github.com/rjNemo/underscore)
 ![Go report](https://goreportcard.com/badge/github.com/rjNemo/underscore?style=for-the-badge)
 ![test coverage](https://img.shields.io/codecov/c/github/rjNemo/underscore?style=for-the-badge&logo=codecov)
+[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/9726/badge?style=for-the-badge)](https://www.bestpractices.dev/projects/9726)
 
 ![underscore](https://socialify.git.ci/rjNemo/underscore/image?description=1&font=KoHo&language=1&logo=https%3A%2F%2Fraw.githubusercontent.com%2FrjNemo%2Funderscore%2Fmain%2Fdocs%2Fstatic%2Flogo.png&owner=1&pattern=Floating%20Cogs&stargazers=1&theme=Dark)
 
