@@ -1,8 +1,9 @@
 package underscore
 
-// Orders a slice by a field value within a struct, the predicate allows you
+// OrderBy orders a slice by a field value within a struct, the predicate allows you
 // to pick the fields you want to orderBy. Use > for ASC or < for DESC
-//   func (left Person, right Person) bool { return left.Age > right.Age }
+//
+//	func (left Person, right Person) bool { return left.Age > right.Age }
 func OrderBy[T any](list []T, predicate func(T, T) bool) []T {
 	swaps := true
 	var tmp T

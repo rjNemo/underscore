@@ -1,6 +1,6 @@
 package underscore
 
-// Zips two slices togther so all the elements of left slice are attached to the corresponding
+// Zip joins two slices together so all the elements of left slice are attached to the corresponding
 // elements of the right slice, i.e. [one two three] [1 2 3 4] = [{one, 1} {two, 2} {three, 3}]
 // the returned data will be the size of the smallest slice
 func Zip[L any, R any](left []L, right []R) []Tuple[L, R] {

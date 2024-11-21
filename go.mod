@@ -1,6 +1,6 @@
 module github.com/rjNemo/underscore
 
-go 1.23
+go 1.23.3
 
 require (
 	github.com/stretchr/testify v1.8.4

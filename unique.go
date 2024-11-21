@@ -1,5 +1,6 @@
 package underscore
 
+// Unique returns a slice of unique values from the given slice.
 func Unique[T comparable](values []T) (uniques []T) {
 	seen := make(map[T]bool, 0)
 	for _, v := range values {
