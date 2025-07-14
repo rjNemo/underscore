@@ -1,10 +1,10 @@
 module github.com/rjNemo/underscore
 
-go 1.23.3
+go 1.24.2
 
 require (
 	github.com/stretchr/testify v1.8.4
-	golang.org/x/exp v0.0.0-20240904232852-e7e105dedf7e
+	golang.org/x/exp v0.0.0-20250711185948-6ae5c78190dc
 )
 
 require (
