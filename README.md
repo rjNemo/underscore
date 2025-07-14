@@ -54,11 +54,11 @@ machine for development and testing purposes.
 
 ### Prerequisites
 
-You need at least `go1.18` for development. The project is shipped with a [Dockerfile](Dockerfile)
-based on `go1.18`.
+You need at least `go1.24` for development. The project is shipped with a [Dockerfile](Dockerfile)
+based on `go1.24`.
 
 If you prefer local development, navigate to the [official
-download page](https://go.dev/dl/) and install version `1.18` or beyond.
+download page](https://go.dev/dl/) and install version `1.24` or beyond.
 
 ### Installing
 

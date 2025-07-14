@@ -1,4 +1,4 @@
-FROM golang:1.23-alpine
+FROM golang:1.24.2-alpine
 
 ENV CGO_ENABLED 0
 ENV GOOS linux
