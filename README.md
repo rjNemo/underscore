@@ -106,6 +106,7 @@ make test
 - `Reduce`
 - `Unique`
 - `UniqueBy`
+- `UniqueInPlace`
 - `Chunk`
 
 ### Pipe
@@ -119,6 +120,7 @@ and return `Value` instantly.
 ### Concurrency
 
 - `ParallelMap(ctx, values, workers, fn)`: apply a function concurrently while preserving order and supporting context cancellation.
+- `ParallelFilter(ctx, values, workers, fn)`: filter concurrently with order preserved and context support.
 
 ```go
 package main
@@ -134,6 +136,24 @@ func main() {
   func(ctx context.Context, n int) (int, error) { return n * n, nil },
  )
  fmt.Println(out, err) // [1 4 9 16] <nil>
+}
+```
+
+```go
+// ParallelFilter example
+package main
+
+import (
+ "context"
+ "fmt"
+ u "github.com/rjNemo/underscore"
+)
+
+func main() {
+ out, err := u.ParallelFilter(context.Background(), []int{1,2,3,4,5}, 3,
+  func(ctx context.Context, n int) (bool, error) { return n%2==0, nil },
+ )
+ fmt.Println(out, err) // [2 4] <nil>
 }
 ```
 
