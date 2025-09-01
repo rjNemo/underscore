@@ -3,7 +3,8 @@ title: "Map"
 date: 2022-03-21T13:32:10-04:00
 ---
 
-`Map` produces a new slice of values by mapping each value in the slice through a transform function.
+`Map` produces a new slice of values by mapping each value in the slice through a
+transform function.
 
 ```go
 package main

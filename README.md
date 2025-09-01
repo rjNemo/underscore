@@ -20,8 +20,8 @@ It is mostly a port from the `underscore.js` library based on generics brought b
 
 Install the library using
 
-```shell
-go get github.com/rjNemo/underscore@0.4.0
+```sh
+go get github.com/rjNemo/underscore@0.7.0
 ```
 
 Please check out the [examples](examples) to see how to use the library.
@@ -64,13 +64,13 @@ download page](https://go.dev/dl/) and install version `1.24` or beyond.
 
 First clone the repository
 
-```shell
+```sh
 git clone https://github.com/rjNemo/underscore.git
 ```
 
 Install dependencies
 
-```shell
+```sh
 go mod download
 ```
 
@@ -80,7 +80,7 @@ And that's it.
 
 To run the unit tests, you can simply run:
 
-```shell
+```sh
 make test
 ```
 
@@ -92,7 +92,8 @@ make test
 
 - `All`
 - `Any`
-- `Contains` (only numerics values at the moment)
+- `Contains`
+- `ContainsBy`
 - `Each`
 - `Filter`
 - `Flatmap`
@@ -103,6 +104,9 @@ make test
 - `Min`
 - `Partition`
 - `Reduce`
+- `Unique`
+- `UniqueBy`
+- `Chunk`
 
 ### Pipe
 
@@ -111,6 +115,31 @@ you've finished the computation, call `Value` to retrieve the final value.
 
 Methods not returning a slice such as `Reduce`, `All`, `Any`, will break the `Chain`
 and return `Value` instantly.
+
+### Concurrency
+
+- `ParallelMap(ctx, values, workers, fn)`: apply a function concurrently while preserving order and supporting context cancellation.
+
+```go
+package main
+
+import (
+ "context"
+ "fmt"
+ u "github.com/rjNemo/underscore"
+)
+
+func main() {
+ out, err := u.ParallelMap(context.Background(), []int{1, 2, 3, 4}, 4,
+  func(ctx context.Context, n int) (int, error) { return n * n, nil },
+ )
+ fmt.Println(out, err) // [1 4 9 16] <nil>
+}
+```
+
+### Subpackages
+
+- `maps.Keys(m)` / `maps.Values(m)`: utilities to extract keys or values from maps.
 
 ## Built With
 

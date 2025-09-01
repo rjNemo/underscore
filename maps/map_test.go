@@ -22,7 +22,8 @@ func TestMap(t *testing.T) {
 		"alice": false,
 		"bob":   false,
 		"clara": false,
-		"david": true}
+		"david": true,
+	}
 	assert.Equal(t, want, m.Map(scores, hasWon))
 }
 
