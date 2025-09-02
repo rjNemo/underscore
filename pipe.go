@@ -1,10 +1,10 @@
 package underscore
 
 import (
-	"golang.org/x/exp/constraints"
+	"cmp"
 )
 
-type Pipe[T constraints.Ordered] struct {
+type Pipe[T cmp.Ordered] struct {
 	Value []T
 }
 
@@ -12,7 +12,7 @@ type Pipe[T constraints.Ordered] struct {
 // call Value to retrieve the final value.
 //
 // Methods not returning a slice such as Reduce, All, Any, will break the Pipe and return Value instantly.
-func NewPipe[T constraints.Ordered](value []T) Pipe[T] {
+func NewPipe[T cmp.Ordered](value []T) Pipe[T] {
 	return Pipe[T]{Value: value}
 }
 

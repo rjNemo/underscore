@@ -6,12 +6,12 @@ func Join[T, P any, S comparable](
 	left []T,
 	right []P,
 	leftSelector func(T) S,
-	rightSelector func(P) S) []Tuple[T, []P] {
-
-	var results = make([]Tuple[T, []P], 0, len(left))
+	rightSelector func(P) S,
+) []Tuple[T, []P] {
+	results := make([]Tuple[T, []P], 0, len(left))
 	for _, l := range left {
-		var matches = Filter(right, func(r P) bool { return leftSelector(l) == rightSelector(r) })
-		var tuple = Tuple[T, []P]{Left: l, Right: matches}
+		matches := Filter(right, func(r P) bool { return leftSelector(l) == rightSelector(r) })
+		tuple := Tuple[T, []P]{Left: l, Right: matches}
 		results = append(results, tuple)
 	}
 
@@ -28,8 +28,8 @@ func JoinProject[L, R, O any, S comparable](
 	right []R,
 	leftSelector func(L) S,
 	rightSelector func(R) S,
-	projection func(Tuple[L, []R]) O) (results []O) {
-
+	projection func(Tuple[L, []R]) O,
+) (results []O) {
 	for _, x := range Join(left, right, leftSelector, rightSelector) {
 		results = append(results, projection(x))
 	}

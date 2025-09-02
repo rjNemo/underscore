@@ -2,7 +2,7 @@ package underscore
 
 // Result represent the outcome of an operation where failure is possible
 type Result[T any] interface {
-	isResult() //to seal the Result interface
+	isResult() // to seal the Result interface
 	ToValue() (*T, error)
 	IsSuccess() bool
 }

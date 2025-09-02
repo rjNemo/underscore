@@ -3,9 +3,9 @@ package underscore_test
 import (
 	"testing"
 
-	u "github.com/rjNemo/underscore"
-
 	"github.com/stretchr/testify/assert"
+
+	u "github.com/rjNemo/underscore"
 )
 
 func TestIntersection(t *testing.T) {
