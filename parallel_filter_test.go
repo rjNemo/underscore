@@ -31,3 +31,12 @@ func TestParallelFilter_Error(t *testing.T) {
 	assert.Error(t, err)
 	assert.Nil(t, out)
 }
+
+func TestParallelFilter_DefaultWorkers(t *testing.T) {
+	values := []int{1, 2, 3, 4}
+	out, err := u.ParallelFilter(context.Background(), values, 0, func(_ context.Context, n int) (bool, error) {
+		return n%2 == 1, nil
+	})
+	assert.NoError(t, err)
+	assert.Equal(t, []int{1, 3}, out)
+}

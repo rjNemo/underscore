@@ -31,3 +31,12 @@ func TestParallelMap_Error(t *testing.T) {
 	assert.Error(t, err)
 	assert.Nil(t, out)
 }
+
+func TestParallelMap_DefaultWorkers(t *testing.T) {
+	values := []int{1, 2, 3}
+	out, err := u.ParallelMap(context.Background(), values, 0, func(_ context.Context, n int) (int, error) {
+		return n + 1, nil
+	})
+	assert.NoError(t, err)
+	assert.Equal(t, []int{2, 3, 4}, out)
+}
