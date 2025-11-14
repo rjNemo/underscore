@@ -16,6 +16,30 @@ func TestFilter(t *testing.T) {
 	assert.Equal(t, want, u.Filter(nums, isEven))
 }
 
+func TestFilterEmpty(t *testing.T) {
+	result := u.Filter([]int{}, func(n int) bool { return n > 0 })
+	assert.Empty(t, result)
+}
+
+func TestFilterSingleElement(t *testing.T) {
+	result := u.Filter([]int{5}, func(n int) bool { return n > 0 })
+	assert.Equal(t, []int{5}, result)
+}
+
+func TestFilterSingleElementNoMatch(t *testing.T) {
+	result := u.Filter([]int{5}, func(n int) bool { return n > 10 })
+	assert.Empty(t, result)
+}
+
+func TestFilterLarge(t *testing.T) {
+	large := make([]int, 10000)
+	for i := range large {
+		large[i] = i
+	}
+	result := u.Filter(large, func(n int) bool { return n%2 == 0 })
+	assert.Equal(t, 5000, len(result))
+}
+
 func BenchmarkFilter(b *testing.B) {
 	data := make([]int, 1000)
 	for i := range data {

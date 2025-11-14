@@ -17,3 +17,13 @@ func TestReduce(t *testing.T) {
 
 	assert.Equal(t, want, u.Reduce(nums, reducer, 0))
 }
+
+func TestReduceEmpty(t *testing.T) {
+	result := u.Reduce([]int{}, func(n, acc int) int { return n + acc }, 10)
+	assert.Equal(t, 10, result) // Should return initial accumulator
+}
+
+func TestReduceSingleElement(t *testing.T) {
+	result := u.Reduce([]int{5}, func(n, acc int) int { return n + acc }, 0)
+	assert.Equal(t, 5, result)
+}

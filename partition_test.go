@@ -20,3 +20,29 @@ func TestPartition(t *testing.T) {
 	assert.Equal(t, wantEvens, evens)
 	assert.Equal(t, wantOdds, odds)
 }
+
+func TestPartitionEmpty(t *testing.T) {
+	keep, reject := u.Partition([]int{}, func(n int) bool { return n > 0 })
+	assert.Empty(t, keep)
+	assert.Empty(t, reject)
+}
+
+func TestPartitionSingleElement(t *testing.T) {
+	keep, reject := u.Partition([]int{5}, func(n int) bool { return n > 3 })
+	assert.Equal(t, []int{5}, keep)
+	assert.Empty(t, reject)
+}
+
+func TestPartitionAllPass(t *testing.T) {
+	nums := []int{2, 4, 6, 8}
+	keep, reject := u.Partition(nums, func(n int) bool { return n%2 == 0 })
+	assert.Equal(t, nums, keep)
+	assert.Empty(t, reject)
+}
+
+func TestPartitionAllReject(t *testing.T) {
+	nums := []int{1, 3, 5, 7}
+	keep, reject := u.Partition(nums, func(n int) bool { return n%2 == 0 })
+	assert.Empty(t, keep)
+	assert.Equal(t, nums, reject)
+}

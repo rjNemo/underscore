@@ -13,3 +13,13 @@ func TestLast(t *testing.T) {
 	want := 5
 	assert.Equal(t, want, u.Last(nums))
 }
+
+func TestLastEmpty(t *testing.T) {
+	assert.Panics(t, func() {
+		u.Last([]int{})
+	})
+}
+
+func TestLastSingleElement(t *testing.T) {
+	assert.Equal(t, 42, u.Last([]int{42}))
+}
