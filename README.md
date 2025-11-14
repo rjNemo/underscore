@@ -21,7 +21,7 @@ It is mostly a port from the `underscore.js` library based on generics brought b
 Install the library using
 
 ```sh
-go get github.com/rjNemo/underscore@0.7.0
+go get github.com/rjNemo/underscore@latest
 ```
 
 Please check out the [examples](examples) to see how to use the library.
@@ -92,22 +92,32 @@ make test
 
 - `All`
 - `Any`
+- `Chunk`
 - `Contains`
 - `ContainsBy`
+- `Count`
+- `Difference`
+- `Drop`
 - `Each`
 - `Filter`
+- `Find`
 - `Flatmap`
 - `GroupBy`
-- `Find`
+- `Intersection`
+- `Join` / `JoinProject`
+- `Last`
 - `Map`
 - `Max`
 - `Min`
+- `OrderBy`
 - `Partition`
+- `Range`
 - `Reduce`
+- `Sum` / `SumMap`
 - `Unique`
 - `UniqueBy`
 - `UniqueInPlace`
-- `Chunk`
+- `Zip`
 
 ### Pipe
 
@@ -157,9 +167,18 @@ func main() {
 }
 ```
 
+### Utilities
+
+- `Ternary`: conditional expression helper
+- `ToPointer`: convert values to pointers
+- `SortSliceASC` / `SortSliceDESC`: sort slices in ascending or descending order
+- `Result`, `Ok`, `Err`, `ToResult`: Result type for error handling
+- `Tuple`: generic tuple type for paired values
+
 ### Subpackages
 
-- `maps.Keys(m)` / `maps.Values(m)`: utilities to extract keys or values from maps.
+- `maps.Keys(m)` / `maps.Values(m)`: extract keys or values from maps
+- `maps.Map(m, fn)`: transform map entries
 
 ## Built With
 
