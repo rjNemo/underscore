@@ -15,3 +15,16 @@ func TestFilter(t *testing.T) {
 	want := []int{0, 2, 4, 6, 8}
 	assert.Equal(t, want, u.Filter(nums, isEven))
 }
+
+func BenchmarkFilter(b *testing.B) {
+	data := make([]int, 1000)
+	for i := range data {
+		data[i] = i
+	}
+	isEven := func(n int) bool { return n%2 == 0 }
+
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		u.Filter(data, isEven)
+	}
+}

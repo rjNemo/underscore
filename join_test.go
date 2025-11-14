@@ -23,7 +23,7 @@ func Test_Join_Can_Join_Two_Slices_Together(t *testing.T) {
 
 	joined := u.Join(left, right, selector, selector)
 	want := []u.Tuple[u.Tuple[int, string], []u.Tuple[int, string]]{
-		{Left: zero, Right: nil},
+		{Left: zero, Right: []u.Tuple[int, string]{}},
 		{Left: one, Right: []u.Tuple[int, string]{one}},
 		{Left: two, Right: []u.Tuple[int, string]{two, two}},
 		{Left: three, Right: []u.Tuple[int, string]{three, three, three}},
