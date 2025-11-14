@@ -15,3 +15,16 @@ func TestFlatmap(t *testing.T) {
 
 	assert.Equal(t, want, u.Flatmap(nums, transform))
 }
+
+func BenchmarkFlatmap(b *testing.B) {
+	data := make([]int, 100)
+	for i := range data {
+		data[i] = i
+	}
+	mapper := func(n int) []int { return []int{n, n * 2, n * 3} }
+
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		u.Flatmap(data, mapper)
+	}
+}
