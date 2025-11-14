@@ -46,3 +46,15 @@ func TestPartitionAllReject(t *testing.T) {
 	assert.Empty(t, keep)
 	assert.Equal(t, nums, reject)
 }
+
+func BenchmarkPartition(b *testing.B) {
+	data := make([]int, 1000)
+	for i := range data {
+		data[i] = i
+	}
+
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		u.Partition(data, func(n int) bool { return n%2 == 0 })
+	}
+}

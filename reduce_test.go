@@ -27,3 +27,15 @@ func TestReduceSingleElement(t *testing.T) {
 	result := u.Reduce([]int{5}, func(n, acc int) int { return n + acc }, 0)
 	assert.Equal(t, 5, result)
 }
+
+func BenchmarkReduce(b *testing.B) {
+	data := make([]int, 1000)
+	for i := range data {
+		data[i] = i
+	}
+
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		u.Reduce(data, func(n, acc int) int { return n + acc }, 0)
+	}
+}

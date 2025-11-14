@@ -37,3 +37,15 @@ func TestMapLarge(t *testing.T) {
 	assert.Equal(t, 0, result[0])
 	assert.Equal(t, 19998, result[9999])
 }
+
+func BenchmarkMap(b *testing.B) {
+	data := make([]int, 1000)
+	for i := range data {
+		data[i] = i
+	}
+
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		u.Map(data, func(n int) int { return n * 2 })
+	}
+}

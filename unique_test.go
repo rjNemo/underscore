@@ -36,3 +36,28 @@ func TestUniqueAllSame(t *testing.T) {
 	result := u.Unique(nums)
 	assert.Equal(t, []int{5}, result)
 }
+
+func BenchmarkUnique(b *testing.B) {
+	data := make([]int, 1000)
+	for i := range data {
+		data[i] = i % 100 // Many duplicates
+	}
+
+	b.ResetTimer()
+	for i := 0; i < b.N; i++ {
+		u.Unique(data)
+	}
+}
+
+func BenchmarkUniqueInPlace(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		b.StopTimer()
+		data := make([]int, 1000)
+		for j := range data {
+			data[j] = j % 100
+		}
+		b.StartTimer()
+
+		u.UniqueInPlace(data)
+	}
+}
