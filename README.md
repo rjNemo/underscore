@@ -113,6 +113,7 @@ make test
 - `Partition`
 - `Range`
 - `Reduce`
+- `RemoveAt`
 - `Sum` / `SumMap`
 - `Unique`
 - `UniqueBy`

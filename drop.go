@@ -1,12 +1,16 @@
 package underscore
 
-// Drop returns the rest of the elements in a slice.
-// Pass an index to return the values of the slice from that index onward.
-func Drop[T any](values []T, index int) (rest []T) {
-	for i, value := range values {
-		if i != index {
-			rest = append(rest, value)
-		}
+// Drop returns a new slice with the first n elements removed.
+// If n is greater than or equal to the slice length, returns an empty slice.
+// If n is less than or equal to 0, returns the original slice.
+func Drop[T any](values []T, n int) []T {
+	if n <= 0 {
+		return values
 	}
-	return rest
+	if n >= len(values) {
+		return []T{}
+	}
+	res := make([]T, len(values)-n)
+	copy(res, values[n:])
+	return res
 }
