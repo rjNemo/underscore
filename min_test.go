@@ -13,3 +13,9 @@ func TestMin(t *testing.T) {
 	want := 1
 	assert.Equal(t, want, u.Min(nums))
 }
+
+func TestMinEmpty(t *testing.T) {
+	assert.Panics(t, func() {
+		u.Min([]int{})
+	})
+}

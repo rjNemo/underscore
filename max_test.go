@@ -13,3 +13,9 @@ func TestMax(t *testing.T) {
 	want := 9
 	assert.Equal(t, want, u.Max(nums))
 }
+
+func TestMaxEmpty(t *testing.T) {
+	assert.Panics(t, func() {
+		u.Max([]int{})
+	})
+}
