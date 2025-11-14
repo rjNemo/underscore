@@ -1,0 +1,8 @@
+goos: darwin
+goarch: arm64
+pkg: github.com/rjNemo/underscore
+cpu: Apple M1 Max
+BenchmarkOrderBy-10         	     564	   2121531 ns/op	    8201 B/op	       1 allocs/op
+BenchmarkOrderBySmall-10    	 6090744	       199.0 ns/op	      80 B/op	       1 allocs/op
+PASS
+ok  	github.com/rjNemo/underscore	2.833s
