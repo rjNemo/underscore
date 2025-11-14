@@ -3,8 +3,8 @@ package underscore
 // Partition splits the slice into two slices: one whose elements all satisfy predicate
 // and one whose elements all do not satisfy predicate.
 func Partition[T any](values []T, predicate func(T) bool) ([]T, []T) {
-	keep := make([]T, 0)
-	reject := make([]T, 0)
+	keep := make([]T, 0, len(values))
+	reject := make([]T, 0, len(values))
 
 	for _, v := range values {
 		if predicate(v) {
