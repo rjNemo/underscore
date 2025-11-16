@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(TestDropWhile\"\ngo test -bench=\"BenchmarkTakeWhile)",
+      "Bash(gh pr create:*)",
+      "Bash(TestTranspose)",
+      "Bash(TestUnzip)",
+      "Bash(TestParallelReduce)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
