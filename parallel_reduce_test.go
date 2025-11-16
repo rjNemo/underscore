@@ -164,7 +164,7 @@ func BenchmarkParallelReduce(b *testing.B) {
 
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
-		u.ParallelReduce(ctx, nums, 4, func(ctx context.Context, n int, acc int) (int, error) {
+		_, _ = u.ParallelReduce(ctx, nums, 4, func(ctx context.Context, n int, acc int) (int, error) {
 			return n + acc, nil
 		}, 0)
 	}

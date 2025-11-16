@@ -53,7 +53,7 @@ func BenchmarkParallelMap(b *testing.B) {
 		b.Run(fmt.Sprintf("workers=%d", workers), func(b *testing.B) {
 			b.ResetTimer()
 			for i := 0; i < b.N; i++ {
-				u.ParallelMap(ctx, data, workers, func(_ context.Context, n int) (int, error) {
+				_, _ = u.ParallelMap(ctx, data, workers, func(_ context.Context, n int) (int, error) {
 					return n * 2, nil
 				})
 			}
@@ -76,7 +76,7 @@ func BenchmarkMapVsParallelMap(b *testing.B) {
 
 	b.Run("ParallelMap", func(b *testing.B) {
 		for i := 0; i < b.N; i++ {
-			u.ParallelMap(ctx, data, 0, func(_ context.Context, n int) (int, error) {
+			_, _ = u.ParallelMap(ctx, data, 0, func(_ context.Context, n int) (int, error) {
 				return n * 2, nil
 			})
 		}

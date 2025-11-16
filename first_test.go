@@ -80,7 +80,7 @@ func BenchmarkFirst(b *testing.B) {
 
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
-		u.First(nums)
+		_, _ = u.First(nums)
 	}
 }
 
