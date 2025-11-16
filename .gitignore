@@ -60,3 +60,6 @@ Temporary Items
 docs/public
 .trivycache/
 .vscode/launch.json
+.claude
+AGENTS.md
+bench*txt
