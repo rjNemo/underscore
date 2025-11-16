@@ -3,19 +3,26 @@ title: "Last"
 date: 2022-03-21T13:46:24-04:00
 ---
 
-`Last` returns the last element of the slice.
+`Last` returns the last element of the slice. Panics if the slice is empty with a clear error message.
 
 ```go
 package main
 
 import (
- "fmt"
- u "github.com/rjNemo/underscore"
+	"fmt"
+	u "github.com/rjNemo/underscore"
 )
 
 func main() {
- nums := []int{1, 9, 2, 8, 3, 7, 4, 6, 5}
+	nums := []int{1, 9, 2, 8, 3, 7, 4, 6, 5}
+	fmt.Println(u.Last(nums)) // 5
 
- fmt.Println(u.Last(nums)) // 5
+	// Single element
+	single := []int{42}
+	fmt.Println(u.Last(single)) // 42
+
+	// Empty slice panics with clear message
+	// empty := []int{}
+	// u.Last(empty) // panic: underscore.Last: empty slice
 }
 ```

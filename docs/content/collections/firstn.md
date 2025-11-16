@@ -9,15 +9,15 @@ date: 2025-01-16T00:00:00-00:00
 package main
 
 import (
-	"fmt"
-	u "github.com/rjNemo/underscore"
+ "fmt"
+ u "github.com/rjNemo/underscore"
 )
 
 func main() {
-	nums := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
-	fmt.Println(u.FirstN(nums, 3))  // [1, 2, 3]
-	fmt.Println(u.FirstN(nums, 0))  // []
-	fmt.Println(u.FirstN(nums, 10)) // [1, 2, 3, 4, 5, 6, 7, 8, 9]
-	fmt.Println(u.FirstN(nums, -5)) // []
+ nums := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
+ fmt.Println(u.FirstN(nums, 3))  // [1, 2, 3]
+ fmt.Println(u.FirstN(nums, 0))  // []
+ fmt.Println(u.FirstN(nums, 10)) // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+ fmt.Println(u.FirstN(nums, -5)) // []
 }
 ```

@@ -9,20 +9,20 @@ date: 2025-01-16T00:00:00-00:00
 package main
 
 import (
-	"fmt"
-	u "github.com/rjNemo/underscore"
+ "fmt"
+ u "github.com/rjNemo/underscore"
 )
 
 func main() {
-	nums := []int{1, 2, 3, 4, 5}
-	fmt.Println(u.Intersperse(nums, 0)) // [1, 0, 2, 0, 3, 0, 4, 0, 5]
+ nums := []int{1, 2, 3, 4, 5}
+ fmt.Println(u.Intersperse(nums, 0)) // [1, 0, 2, 0, 3, 0, 4, 0, 5]
 
-	// Useful for formatting
-	words := []string{"apple", "banana", "cherry"}
-	fmt.Println(u.Intersperse(words, ",")) // ["apple", ",", "banana", ",", "cherry"]
+ // Useful for formatting
+ words := []string{"apple", "banana", "cherry"}
+ fmt.Println(u.Intersperse(words, ",")) // ["apple", ",", "banana", ",", "cherry"]
 
-	// Single element - no separator added
-	single := []int{42}
-	fmt.Println(u.Intersperse(single, 0)) // [42]
+ // Single element - no separator added
+ single := []int{42}
+ fmt.Println(u.Intersperse(single, 0)) // [42]
 }
 ```

@@ -11,40 +11,40 @@ date: 2025-01-16T00:00:00-00:00
 package main
 
 import (
-	"context"
-	"fmt"
-	"time"
-	u "github.com/rjNemo/underscore"
+ "context"
+ "fmt"
+ "time"
+ u "github.com/rjNemo/underscore"
 )
 
 func main() {
-	nums := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
-	ctx := context.Background()
+ nums := []int{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+ ctx := context.Background()
 
-	// Parallel sum (safe - addition is associative and commutative)
-	result, err := u.ParallelReduce(ctx, nums, 4, func(ctx context.Context, n int, acc int) (int, error) {
-		// Simulate expensive computation
-		time.Sleep(10 * time.Millisecond)
-		return n + acc, nil
-	}, 0)
+ // Parallel sum (safe - addition is associative and commutative)
+ result, err := u.ParallelReduce(ctx, nums, 4, func(ctx context.Context, n int, acc int) (int, error) {
+  // Simulate expensive computation
+  time.Sleep(10 * time.Millisecond)
+  return n + acc, nil
+ }, 0)
 
-	if err != nil {
-		panic(err)
-	}
-	fmt.Println(result) // Result will vary due to parallel execution
+ if err != nil {
+  panic(err)
+ }
+ fmt.Println(result) // Result will vary due to parallel execution
 
-	// With context cancellation
-	ctx, cancel := context.WithTimeout(context.Background(), 50*time.Millisecond)
-	defer cancel()
+ // With context cancellation
+ ctx, cancel := context.WithTimeout(context.Background(), 50*time.Millisecond)
+ defer cancel()
 
-	_, err = u.ParallelReduce(ctx, nums, 4, func(ctx context.Context, n int, acc int) (int, error) {
-		time.Sleep(100 * time.Millisecond)
-		return n + acc, nil
-	}, 0)
+ _, err = u.ParallelReduce(ctx, nums, 4, func(ctx context.Context, n int, acc int) (int, error) {
+  time.Sleep(100 * time.Millisecond)
+  return n + acc, nil
+ }, 0)
 
-	if err != nil {
-		fmt.Println("Operation was cancelled:", err)
-	}
+ if err != nil {
+  fmt.Println("Operation was cancelled:", err)
+ }
 }
 ```
 

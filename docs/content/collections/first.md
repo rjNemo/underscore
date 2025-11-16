@@ -9,23 +9,23 @@ date: 2025-01-16T00:00:00-00:00
 package main
 
 import (
-	"fmt"
-	u "github.com/rjNemo/underscore"
+ "fmt"
+ u "github.com/rjNemo/underscore"
 )
 
 func main() {
-	nums := []int{1, 2, 3, 4, 5}
-	first, err := u.First(nums)
-	if err != nil {
-		panic(err)
-	}
-	fmt.Println(first) // 1
+ nums := []int{1, 2, 3, 4, 5}
+ first, err := u.First(nums)
+ if err != nil {
+  panic(err)
+ }
+ fmt.Println(first) // 1
 
-	// Handle empty slice
-	empty := []int{}
-	_, err = u.First(empty)
-	if err != nil {
-		fmt.Println("Error:", err) // Error: underscore: empty slice
-	}
+ // Handle empty slice
+ empty := []int{}
+ _, err = u.First(empty)
+ if err != nil {
+  fmt.Println("Error:", err) // Error: underscore: empty slice
+ }
 }
 ```

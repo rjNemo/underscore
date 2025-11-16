@@ -9,35 +9,35 @@ date: 2025-01-16T00:00:00-00:00
 package main
 
 import (
-	"fmt"
-	u "github.com/rjNemo/underscore"
+ "fmt"
+ u "github.com/rjNemo/underscore"
 )
 
 func main() {
-	// Basic usage
-	fmt.Println(u.Replicate(3, "hello"))
-	// ["hello", "hello", "hello"]
+ // Basic usage
+ fmt.Println(u.Replicate(3, "hello"))
+ // ["hello", "hello", "hello"]
 
-	// Numbers
-	fmt.Println(u.Replicate(5, 0))
-	// [0, 0, 0, 0, 0]
+ // Numbers
+ fmt.Println(u.Replicate(5, 0))
+ // [0, 0, 0, 0, 0]
 
-	// Zero count
-	fmt.Println(u.Replicate(0, 42))
-	// []
+ // Zero count
+ fmt.Println(u.Replicate(0, 42))
+ // []
 
-	// Negative count
-	fmt.Println(u.Replicate(-5, "x"))
-	// []
+ // Negative count
+ fmt.Println(u.Replicate(-5, "x"))
+ // []
 
-	// Use case: initialize with default values
-	defaultScores := u.Replicate(10, 100)
-	fmt.Println(defaultScores)
-	// [100, 100, 100, 100, 100, 100, 100, 100, 100, 100]
+ // Use case: initialize with default values
+ defaultScores := u.Replicate(10, 100)
+ fmt.Println(defaultScores)
+ // [100, 100, 100, 100, 100, 100, 100, 100, 100, 100]
 
-	// Use case: creating separators
-	separator := u.Replicate(40, "-")
-	fmt.Println(u.Reduce(separator, func(s, acc string) string { return acc + s }, ""))
-	// ----------------------------------------
+ // Use case: creating separators
+ separator := u.Replicate(40, "-")
+ fmt.Println(u.Reduce(separator, func(s, acc string) string { return acc + s }, ""))
+ // ----------------------------------------
 }
 ```
